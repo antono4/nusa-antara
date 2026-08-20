@@ -6,7 +6,8 @@ Asisten AI berbahasa Indonesia yang bisa langsung berjalan dari repo GitHub ini.
 
 - **Mode lokal** — bekerja tanpa internet/API key (menjawab dengan aturan cerdas, bisa berhitung).
 - **Mode LLM** — jika `LLM_API_KEY` diatur, jawaban diberikan oleh model bahasa (endpoint OpenAI-compatible).
-- **Belajar tiap 30 menit** — workflow GitHub Actions menambah pengetahuan baru ke `nusa_antara/pengetahuan.json` secara berkala (otomatis commit). Jika `LLM_API_KEY` diset sebagai secret repo, fakta baru digali oleh model bahasa; tanpa itu, fakta diambil dari benih Nusantara internal.
+- **Belajar tiap 30 menit** — workflow GitHub Actions menambah pengetahuan baru ke `nusa_antara/pengetahuan.json` secara berkala (otomatis commit). Sumber: LLM (jika secret `LLM_API_KEY` ada) → Wikipedia Bahasa Indonesia → benih Nusantara internal.
+- **Bot penjawab issue** — setiap issue baru di repo otomatis dijawab NUSA ANTARA lewat komentar (workflow `jawab-issue.yml`).
 - **Basis pengetahuan** — fakta-fakta tentang Indonesia/Nusantara yang langsung dipakai untuk menjawab pertanyaan.
 - CLI interaktif + mode satu kali jalan (`--once`).
 - CI GitHub Actions yang menjalankan tes di setiap push/PR.

@@ -71,6 +71,35 @@ def _llm_fact(missing_keywords: list[str]) -> tuple[str, str] | None:
         return None
 
 
+_WIKI_TOPICS = [
+    "Borobudur", "Raja Ampat", "Gamelan", "Batik", "Komodo",
+    "Danau Toba", "Prambanan", "Wayang", "Angklung", "Keris",
+    "Tari Saman", "Rendang", "Noken", "Wakatobi", "Pencak silat",
+    "Candi Prambanan", "Ibu Kota Nusantara", "Krakatau", "Bunaken", "Toraja",
+]
+
+
+def _wiki_fact(existing: list[str]) -> tuple[str, str] | None:
+    """Ambil ringkasan acak dari Wikipedia Bahasa Indonesia."""
+    for topik in _WIKI_TOPICS:
+        if topik.lower() in existing:
+            continue
+        url = f"https://id.wikipedia.org/api/rest_v1/page/summary/{topik.replace(' ', '_')}"
+        req = urllib.request.Request(url, headers={"User-Agent": "nusa-antara/0.1"})
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+            ringkasan = data.get("extract", "").strip()
+            if ringkasan and data.get("type") == "standard":
+                kalimat = ringkasan.split(". ")[0].strip()
+                if not kalimat.endswith("."):
+                    kalimat += "."
+                return topik.lower(), f"{kalimat} (Sumber: Wikipedia)"
+        except Exception:
+            continue
+    return None
+
+
 def learn_once(knowledge: Knowledge | None = None) -> str:
     knowledge = knowledge or Knowledge(DATA_PATH)
     if len(knowledge.entries) >= MAX_ENTRIES:
@@ -78,7 +107,7 @@ def learn_once(knowledge: Knowledge | None = None) -> str:
 
     existing = [e["kata"] for e in knowledge.entries]
 
-    fact = _llm_fact(existing)
+    fact = _llm_fact(existing) or _wiki_fact(existing)
     if fact is None:
         for kata, jawaban in _SEED_EXPAND:
             if kata not in existing:
