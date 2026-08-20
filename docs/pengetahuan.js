@@ -54,5 +54,9 @@ const PENGETAHUAN = [
   {
     "kata": "prambanan",
     "jawaban": "Candi Prambanan adalah bangunan candi bercorak agama Hindu terbesar di Indonesia yang dibangun pada abad ke-9 Masehi. (Sumber: Wikipedia)"
+  },
+  {
+    "kata": "keris",
+    "jawaban": "Keris merupakan senjata tajam golongan belati dari suku Jawa yang memiliki ragam fungsi budaya yang dikenal di kawasan Nusantara bagian barat dan tengah. (Sumber: Wikipedia)"
   }
 ];
