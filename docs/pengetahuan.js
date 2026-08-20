@@ -1,0 +1,50 @@
+const PENGETAHUAN = [
+  {
+    "kata": "indonesia",
+    "jawaban": "Indonesia adalah negara kepulauan terbesar di dunia dengan lebih dari 17.000 pulau."
+  },
+  {
+    "kata": "nusantara",
+    "jawaban": "Nusantara adalah istilah untuk kepulauan Indonesia, dan juga nama ibu kota baru Indonesia (IKN)."
+  },
+  {
+    "kata": "ibu kota",
+    "jawaban": "Ibu kota Indonesia kini adalah IKN Nusantara di Kalimantan Timur, menggantikan Jakarta."
+  },
+  {
+    "kata": "batik",
+    "jawaban": "Batik adalah kain tradisional Indonesia yang diakui UNESCO sebagai warisan budaya tak benda."
+  },
+  {
+    "kata": "rendang",
+    "jawaban": "Rendang adalah masakan khas Minangkabau yang pernah dinobatkan sebagai makanan terlezat di dunia versi CNN."
+  },
+  {
+    "kata": "komodo",
+    "jawaban": "Pulau Komodo di NTT adalah habitat asli komodo, kadal terbesar di dunia."
+  },
+  {
+    "kata": "borobudur",
+    "jawaban": "Borobudur di Jawa Tengah adalah candi Buddha terbesar di dunia, dibangun abad ke-9."
+  },
+  {
+    "kata": "raja ampat",
+    "jawaban": "Raja Ampat di Papua adalah surga biodiversitas laut dengan sekitar 75% spesies karang dunia."
+  },
+  {
+    "kata": "gamelan",
+    "jawaban": "Gamelan adalah ansambel musik tradisional Jawa dan Bali dengan gong, kendang, dan metalofon."
+  },
+  {
+    "kata": "bahasa daerah",
+    "jawaban": "Indonesia memiliki lebih dari 700 bahasa daerah — salah satu yang terkaya di dunia."
+  },
+  {
+    "kata": "wayang",
+    "jawaban": "Wayang kulit adalah seni pertunjukan tradisional Jawa yang diakui UNESCO."
+  },
+  {
+    "kata": "angklung",
+    "jawaban": "Angklung adalah alat musik bambu khas Sunda, Jawa Barat."
+  }
+];

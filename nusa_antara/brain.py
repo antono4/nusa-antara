@@ -99,10 +99,71 @@ class NusaAntara:
     def mode(self) -> str:
         return "llm" if self._llm else "lokal"
 
+    def _github_user(self):
+        try:
+            from .github_auth import current_user
+
+            return current_user()
+        except Exception:
+            return None
+
+    def _github_command(self, message: str) -> str | None:
+        from . import github_auth, github_api
+
+        text = message.strip()
+        low = text.lower()
+        if not low.startswith("github"):
+            return None
+
+        user = self._github_user()
+        if not user:
+            return (
+                "Anda belum login GitHub. Jalankan: python main.py --login "
+                "(butuh NUSA_GITHUB_CLIENT_ID dari OAuth App)."
+            )
+        api = github_api.GitHubAPI(github_auth.load_token())
+
+        try:
+            if low in {"github", "github siapa", "github akun", "github profil"}:
+                return (
+                    f"Anda login sebagai @{user['login']} "
+                    f"({user.get('name') or '-'}, {user.get('public_repos', 0)} repo publik)."
+                )
+            if low == "github repo":
+                repos = api.repo_saya()
+                baris = [f"- {r['full_name']} (⭐ {r['stargazers_count']})" for r in repos]
+                return "Repo terbaru Anda:\n" + "\n".join(baris)
+            m = re.match(r"github issue(?:\s+di)?\s+(\S+)$", low)
+            if m:
+                issues = api.daftar_issue(m.group(1))
+                if not issues:
+                    return f"Tidak ada issue terbuka di {m.group(1)}."
+                baris = [f"- #{i['number']}: {i['title']}" for i in issues]
+                return f"Issue terbuka di {m.group(1)}:\n" + "\n".join(baris)
+            m = re.match(r"github bintangi\s+(\S+)$", low)
+            if m:
+                api.bintangi(m.group(1))
+                return f"⭐ Repo {m.group(1)} berhasil dibintangi atas nama @{user['login']}."
+            m = re.match(r"github buat issue\s+(\S+)\s+(.+)$", text, re.IGNORECASE)
+            if m:
+                issue = api.buat_issue(m.group(1), m.group(2))
+                return f"Issue dibuat: {issue['html_url']}"
+            return (
+                "Perintah GitHub yang tersedia:\n"
+                "- github siapa\n- github repo\n- github issue <pemilik/repo>\n"
+                "- github buat issue <pemilik/repo> <judul>\n- github bintangi <pemilik/repo>"
+            )
+        except Exception as exc:
+            return f"Permintaan GitHub gagal: {exc}"
+
     def reply(self, message: str) -> str:
         message = message.strip()
         if not message:
             return "Silakan ketik sesuatu, saya siap mendengarkan."
+        if message.lower().startswith("github"):
+            jawaban = self._github_command(message)
+            if jawaban:
+                return jawaban
         if self._llm:
             return self._llm.chat(message)
         if self._knowledge:

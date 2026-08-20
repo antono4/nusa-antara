@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NUSA ANTARA — Asisten AI Nusantara</title>
+<style>
+  :root { --bg:#0f172a; --panel:#1e293b; --accent:#f59e0b; --accent2:#dc2626; --text:#e2e8f0; --muted:#94a3b8; }
+  * { box-sizing:border-box; margin:0; }
+  body { font-family:'Segoe UI',system-ui,sans-serif; background:linear-gradient(160deg,#0f172a,#1e1b4b); color:var(--text); min-height:100vh; display:flex; flex-direction:column; align-items:center; }
+  header { width:100%; max-width:820px; padding:24px 16px 8px; display:flex; justify-content:space-between; align-items:center; }
+  h1 { font-size:1.5rem; background:linear-gradient(90deg,var(--accent),var(--accent2)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  #loginArea button { background:var(--accent); color:#111; border:0; padding:8px 16px; border-radius:8px; cursor:pointer; font-weight:600; }
+  #loginArea button.ghost { background:transparent; color:var(--muted); border:1px solid var(--muted); }
+  main { width:100%; max-width:820px; flex:1; display:flex; flex-direction:column; padding:8px 16px 16px; }
+  #chat { flex:1; overflow-y:auto; background:var(--panel); border-radius:14px; padding:16px; min-height:50vh; display:flex; flex-direction:column; gap:10px; }
+  .msg { max-width:85%; padding:10px 14px; border-radius:12px; line-height:1.45; white-space:pre-wrap; }
+  .ai { background:#334155; align-self:flex-start; border-left:3px solid var(--accent); }
+  .me { background:#7c2d12; align-self:flex-end; }
+  .sys { align-self:center; color:var(--muted); font-size:.85rem; background:transparent; }
+  #inputBar { display:flex; gap:8px; margin-top:10px; }
+  #inputBar input { flex:1; padding:12px 14px; border-radius:10px; border:1px solid #475569; background:#0f172a; color:var(--text); }
+  #inputBar button { padding:12px 20px; border-radius:10px; border:0; background:var(--accent2); color:#fff; font-weight:600; cursor:pointer; }
+  .chip { background:#475569; border:0; color:var(--text); border-radius:999px; padding:6px 12px; cursor:pointer; font-size:.8rem; }
+  #chips { display:flex; gap:6px; flex-wrap:wrap; margin-top:8px; }
+  dialog { background:var(--panel); color:var(--text); border:1px solid #475569; border-radius:12px; padding:20px; max-width:420px; }
+  dialog input { width:100%; padding:10px; margin:8px 0 14px; border-radius:8px; border:1px solid #475569; background:#0f172a; color:var(--text); }
+  dialog button { padding:8px 16px; border-radius:8px; border:0; background:var(--accent); font-weight:600; cursor:pointer; margin-right:8px; }
+  footer { color:var(--muted); font-size:.8rem; padding:12px; }
+  a { color:var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <h1>🌏 NUSA ANTARA</h1>
+  <div id="loginArea"></div>
+</header>
+<main>
+  <div id="chat"></div>
+  <div id="chips">
+    <button class="chip" data-q="halo">👋 halo</button>
+    <button class="chip" data-q="siapa kamu">siapa kamu</button>
+    <button class="chip" data-q="apa itu batik">apa itu batik</button>
+    <button class="chip" data-q="hitung 12 * 8">hitung 12 * 8</button>
+    <button class="chip" data-q="github siapa">github siapa</button>
+    <button class="chip" data-q="github repo">github repo</button>
+  </div>
+  <div id="inputBar">
+    <input id="msg" placeholder="Tulis pesan untuk NUSA ANTARA…" autocomplete="off">
+    <button id="send">Kirim</button>
+  </div>
+</main>
+<footer>NUSA ANTARA berjalan sepenuhnya di browser Anda. Token GitHub hanya disimpan di perangkat ini. · <a href="https://github.com/antono4/nusa-antara">Source</a></footer>
+
+<dialog id="loginDialog">
+  <h3>Masuk dengan GitHub</h3>
+  <p style="color:var(--muted);font-size:.9rem">Tempel <b>Personal Access Token</b> Anda
+  (<a href="https://github.com/settings/tokens?type=beta" target="_blank">buat di sini</a>,
+  cukup izin repo). Token disimpan hanya di browser ini.</p>
+  <input id="pat" type="password" placeholder="github_pat_…">
+  <button id="patOk">Masuk</button>
+  <button class="ghost" onclick="loginDialog.close()">Batal</button>
+</dialog>
+
+<script src="pengetahuan.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

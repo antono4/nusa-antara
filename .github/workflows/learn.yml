@@ -25,10 +25,18 @@ jobs:
           LLM_MODEL: ${{ vars.LLM_MODEL }}
         run: python learn.py
 
+      - name: Sinkronkan pengetahuan ke situs web
+        run: |
+          python3 -c "
+          import json
+          data = json.load(open('nusa_antara/pengetahuan.json'))
+          open('docs/pengetahuan.js','w').write('const PENGETAHUAN = ' + json.dumps(data, ensure_ascii=False, indent=2) + ';\n')
+          "
+
       - name: Simpan pengetahuan baru ke repo
         run: |
           git config user.name "nusa-antara-bot"
           git config user.email "nusa-antara-bot@users.noreply.github.com"
-          git add nusa_antara/pengetahuan.json
+          git add nusa_antara/pengetahuan.json docs/pengetahuan.js
           git diff --cached --quiet || git commit -m "🧠 Belajar: tambah pengetahuan baru [skip ci]"
           git push
