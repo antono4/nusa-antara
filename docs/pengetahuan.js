@@ -50,5 +50,9 @@ const PENGETAHUAN = [
   {
     "kata": "danau toba",
     "jawaban": "Danau Toba adalah sebuah danau alami berukuran besar di Sumatera Utara dan Indonesia. (Sumber: Wikipedia)"
+  },
+  {
+    "kata": "prambanan",
+    "jawaban": "Candi Prambanan adalah bangunan candi bercorak agama Hindu terbesar di Indonesia yang dibangun pada abad ke-9 Masehi. (Sumber: Wikipedia)"
   }
 ];
