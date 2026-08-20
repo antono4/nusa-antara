@@ -52,4 +52,3 @@ tests/           # unit test
 
 ---
 
-*Dibuat oleh AI agent (OpenHands) atas permintaan pengguna.*
