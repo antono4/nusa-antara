@@ -70,5 +70,9 @@ const PENGETAHUAN = [
   {
     "kata": "pencak silat",
     "jawaban": "Pencak silat adalah sebuah istilah yang merujuk kepada suatu jenis bela diri Indonesia yang saling berhubungan. (Sumber: Wikipedia)"
+  },
+  {
+    "kata": "candi prambanan",
+    "jawaban": "Candi Prambanan adalah bangunan candi bercorak agama Hindu terbesar di Indonesia yang dibangun pada abad ke-9 Masehi. (Sumber: Wikipedia)"
   }
 ];
