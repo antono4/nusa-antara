@@ -88,6 +88,12 @@ class NusaAntara:
             self._llm = LLMClient.from_env()
         except Exception:
             self._llm = None
+        try:
+            from .knowledge import Knowledge
+
+            self._knowledge = Knowledge()
+        except Exception:
+            self._knowledge = None
 
     @property
     def mode(self) -> str:
@@ -99,4 +105,8 @@ class NusaAntara:
             return "Silakan ketik sesuatu, saya siap mendengarkan."
         if self._llm:
             return self._llm.chat(message)
+        if self._knowledge:
+            jawaban = self._knowledge.lookup(message)
+            if jawaban:
+                return jawaban
         return _local_reply(message)
