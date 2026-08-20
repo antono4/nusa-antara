@@ -46,5 +46,9 @@ const PENGETAHUAN = [
   {
     "kata": "angklung",
     "jawaban": "Angklung adalah alat musik bambu khas Sunda, Jawa Barat."
+  },
+  {
+    "kata": "danau toba",
+    "jawaban": "Danau Toba adalah sebuah danau alami berukuran besar di Sumatera Utara dan Indonesia. (Sumber: Wikipedia)"
   }
 ];
