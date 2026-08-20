@@ -74,5 +74,9 @@ const PENGETAHUAN = [
   {
     "kata": "candi prambanan",
     "jawaban": "Candi Prambanan adalah bangunan candi bercorak agama Hindu terbesar di Indonesia yang dibangun pada abad ke-9 Masehi. (Sumber: Wikipedia)"
+  },
+  {
+    "kata": "ibu kota nusantara",
+    "jawaban": "Nusantara, secara resmi bernama Ibu Kota Nusantara atau disingkat sebagai IKN, adalah daerah bersifat khusus setingkat provinsi mencakup kota yang sedang dibangun di Kabupaten Kutai Kartanegara dan Kabupaten Penajam Paser Utara, Kalimantan Timur, Indonesia. (Sumber: Wikipedia)"
   }
 ];
