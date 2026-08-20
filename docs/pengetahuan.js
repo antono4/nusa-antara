@@ -66,5 +66,9 @@ const PENGETAHUAN = [
   {
     "kata": "noken",
     "jawaban": "Noken adalah tas tradisional masyarakat Papua yang dibawa dengan menggunakan kepala dan terbuat dari serat kulit kayu. (Sumber: Wikipedia)"
+  },
+  {
+    "kata": "pencak silat",
+    "jawaban": "Pencak silat adalah sebuah istilah yang merujuk kepada suatu jenis bela diri Indonesia yang saling berhubungan. (Sumber: Wikipedia)"
   }
 ];
