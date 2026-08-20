@@ -18,3 +18,4 @@ packages = ["nusa_antara"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["."]
