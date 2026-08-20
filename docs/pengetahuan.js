@@ -90,5 +90,9 @@ const PENGETAHUAN = [
   {
     "kata": "kopi luwak",
     "jawaban": "Kopi luwak adalah salah satu kopi termahal di dunia dari Indonesia."
+  },
+  {
+    "kata": "wakatobi",
+    "jawaban": "Wakatobi di Sulawesi Tenggara dikenal sebagai salah satu lokasi selam terbaik dunia."
   }
 ];
