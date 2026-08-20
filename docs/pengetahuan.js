@@ -58,5 +58,9 @@ const PENGETAHUAN = [
   {
     "kata": "keris",
     "jawaban": "Keris merupakan senjata tajam golongan belati dari suku Jawa yang memiliki ragam fungsi budaya yang dikenal di kawasan Nusantara bagian barat dan tengah. (Sumber: Wikipedia)"
+  },
+  {
+    "kata": "tari saman",
+    "jawaban": "Tari Saman adalah tari rakyat dari masyarakat Suku Gayo di Provinsi Aceh, Indonesia. (Sumber: Wikipedia)"
   }
 ];
