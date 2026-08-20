@@ -1,0 +1,3 @@
+# NUSA ANTARA tidak butuh dependensi eksternal untuk mode lokal.
+# pytest dipakai untuk menjalankan tes.
+pytest>=8.0

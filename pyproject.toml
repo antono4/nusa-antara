@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nusa-antara"
+version = "0.1.0"
+description = "NUSA ANTARA - Asisten AI berbahasa Indonesia yang berjalan di repo GitHub"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+[project.scripts]
+nusa-antara = "nusa_antara.cli:main"
+
+[tool.setuptools]
+packages = ["nusa_antara"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
