@@ -62,5 +62,9 @@ const PENGETAHUAN = [
   {
     "kata": "tari saman",
     "jawaban": "Tari Saman adalah tari rakyat dari masyarakat Suku Gayo di Provinsi Aceh, Indonesia. (Sumber: Wikipedia)"
+  },
+  {
+    "kata": "noken",
+    "jawaban": "Noken adalah tas tradisional masyarakat Papua yang dibawa dengan menggunakan kepala dan terbuat dari serat kulit kayu. (Sumber: Wikipedia)"
   }
 ];
