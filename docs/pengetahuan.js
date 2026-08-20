@@ -86,5 +86,9 @@ const PENGETAHUAN = [
   {
     "kata": "bunaken",
     "jawaban": "Bunaken adalah sebuah pulau seluas 8,08 km² di Teluk Manado, yang terletak di utara pulau Sulawesi, Indonesia. (Sumber: Wikipedia)"
+  },
+  {
+    "kata": "kopi luwak",
+    "jawaban": "Kopi luwak adalah salah satu kopi termahal di dunia dari Indonesia."
   }
 ];
