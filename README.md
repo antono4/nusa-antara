@@ -1,2 +1,31 @@
-Last updated: 2026-09-11 08:10:40 WIB
-Last updated: 2026-09-11 11:38:52 WIB
+# nusa-antara
+
+
+
+## 📋 Overview
+
+This repository contains **32 files** and is built with the following technologies:
+
+Python, HTML
+
+## 🚀 Quick Start
+
+```bash
+pip install -r requirements.txt
+python main.py
+```
+
+## ✨ Features
+
+- 📝 Auto-generated documentation
+
+## 🛠️ Technologies
+
+Python, HTML
+
+## 📄 License
+
+MIT License
+
+---
+*Last updated: 2026-09-11 11:46:33 WIB*
